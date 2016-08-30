@@ -45,12 +45,11 @@ RUN echo "Installing build dependencies" \
   && ./configure --prefix=$NODE_PREFIX \
   && make -j$(nproc --ignore=1) install \
   && set +x \
-  && curl https://www.npmjs.org/install.sh | sh \
   && echo "Removing build dependencies: '$BUILD_DEPS'" \
-  && apk del $NODE_BUILD_DEPS \
+  && apk del $BUILD_DEPS \
   && echo "Removing build directory" \
   && rm -r $BUILD_DIR \
-  && echo "Installing runtime dependencies" \
+  && echo "Ensure runtime dependencies are still installed" \
   && apk add --no-cache $NODE_RUNTIME_DEPS \
   && echo "Done"
 
