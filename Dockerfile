@@ -43,7 +43,7 @@ RUN echo "Installing build dependencies" \
   && tar -xJf $SOURCE_ARCHIVE_NAME -C $BUILD_DIR --strip-components=1 \
   && cd $BUILD_DIR \
   && ./configure --prefix=$NODE_PREFIX \
-  && make -j$(nproc --ignore=1) install \
+  && make -j$(nproc) install \
   && set +x \
   && echo "Removing build dependencies: '$BUILD_DEPS'" \
   && apk del $BUILD_DEPS \
