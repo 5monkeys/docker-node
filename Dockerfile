@@ -2,7 +2,7 @@
 FROM alpine:3.4
 
 ENV NPM_CONFIG_LOGLEVEL info
-ENV NODE_VERSION 6.4.0
+ENV NODE_VERSION 6.5.0
 ENV NODE_PREFIX /usr/local
 
 RUN echo "Installing build dependencies" \
