@@ -41,6 +41,7 @@ RUN echo "Installing build dependencies" \
   && set -x \
   && mkdir $BUILD_DIR \
   && tar -xJf $SOURCE_ARCHIVE_NAME -C $BUILD_DIR --strip-components=1 \
+  && rm $SOURCE_ARCHIVE_NAME \
   && cd $BUILD_DIR \
   && ./configure --prefix=$NODE_PREFIX \
   && make -j$(nproc) install \
